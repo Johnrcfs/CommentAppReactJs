@@ -1,10 +1,13 @@
 import './Comment.css';
 
-export function Comment(){
+export function Comment(props){
+    const {name, email, message, date} = props;
     return (
         <div className="comment">
-            <h2>Jonathan Costa</h2>
-            <p>o Jonatha é Lindo</p>
+            <h2>{name}</h2>
+            <p>{email}</p>
+            <p>{message}</p>
+            <p>{date.toString()}</p>
         </div>
     )
 }

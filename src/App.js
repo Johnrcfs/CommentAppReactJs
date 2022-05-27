@@ -49,7 +49,16 @@ class App extends React.Component {
     this.setState({
       form: newCommentForm
     })
+  };
 
+  //Metodo criado para deletar comment
+  onDeleteComment = (comment) => {
+    const filterList = this.state.comments.filter((commentFilter) => {
+      return comment !== commentFilter;
+    });
+      this.setState({
+        comments: filterList
+      });
   }
 
   render() {
@@ -65,7 +74,7 @@ class App extends React.Component {
               email={comment.email}
               date={comment.date}
               message={comment.message}
-
+              onDeleteComment={() => {this.onDeleteComment(comment)}}
             />
           );
         })};

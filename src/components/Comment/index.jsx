@@ -1,5 +1,5 @@
-import './Comment.css';
-import ProfileImg from '../img/man.png';
+import './style.css';
+import ProfileImg from './img/man.png';
 
 export function Comment(props){
     const {name, email, message, date, onDeleteComment} = props;

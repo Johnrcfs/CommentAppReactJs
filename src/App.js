@@ -4,6 +4,8 @@ import {Comment} from './components/Comment/index';
 
 import {CommentForm} from './components/CommentForm/index';
 
+import Swal from 'sweetalert2';
+
 class App extends React.Component {
 
   state = {
@@ -41,7 +43,30 @@ class App extends React.Component {
       }
     });
 
+    Swal.fire('o Comentario foi adcionado com sucesso','', 'success');
+
   };
+
+  deleteCommentAlert = (comment) => {
+
+    Swal.fire({
+      title: 'Realmente deseja Excluir esse Comentario?',
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: 'Sim',
+      denyButtonText: `Não eu mudei de ideia.`,
+      icon: 'question',
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        this.onDeleteComment(comment);
+        Swal.fire('o comentário foi excluido com sucesso!', '', 'success')
+      } else if (result.isDenied) {
+        Swal.fire('Fique tranquilo nada foi excluido', '', 'info')
+      }
+    })
+
+  }
 
   //capturando todos o evento digitado pelo usuario.
   onFieldChanges = (event) => {
@@ -51,6 +76,8 @@ class App extends React.Component {
     this.setState({
       form: newCommentForm
     })
+
+    
   };
 
   //Metodo criado para deletar comment
@@ -76,10 +103,10 @@ class App extends React.Component {
               email={comment.email}
               date={comment.date}
               message={comment.message}
-              onDeleteComment={() => {this.onDeleteComment(comment)}}
+              onDeleteComment={() => {this.deleteCommentAlert(comment)}}
             />
           );
-        })};
+        })}
         <CommentForm 
           onAddComment={this.addComment}
           onFieldChanged={this.onFieldChanges}

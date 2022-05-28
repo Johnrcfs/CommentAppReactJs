@@ -11,16 +11,16 @@ class App extends React.Component {
   state = {
     comments: [
       {
-        name: 'Jonathan',
-        email: 'John@John.com',
+        name: 'John Fernandes',
+        email: 'johnrsfc.ti@gmail.com',
         date: new Date(),
-        message: 'John é lindo demais',
+        message: 'John é lindo demais!',
       },
       {
-        name: 'larissa',
-        email: 'lari@John.com',
+        name: 'Thanos And Black',
+        email: 'thanosandblack@gmail.com',
         date: new Date(),
-        message: 'John é lindo demais',
+        message: 'Meus Dois Dogs São os Mias Lindos!',
       },
     ],
     form: {

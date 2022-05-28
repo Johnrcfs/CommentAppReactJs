@@ -2,6 +2,16 @@
 
 Project created using ReactJs
 
+
+## Some application screenshots
+
+![](https://github.com/Johnrcfs/CommentAppReactJs/blob/main/src/resources/screenshots/initial.jpeg)
+
+![](https://github.com/Johnrcfs/CommentAppReactJs/blob/main/src/resources/screenshots/AddNewComment.jpeg)
+
+![](https://github.com/Johnrcfs/CommentAppReactJs/blob/main/src/resources/screenshots/DeleteOneComment.jpeg)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
